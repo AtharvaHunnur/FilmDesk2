@@ -1,0 +1,96 @@
+.searchPage {
+    padding-top: calc(var(--nav-height) + 2rem);
+    min-height: 100vh;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-bottom: 3rem;
+}
+
+.searchHeader {
+    margin-bottom: 2rem;
+}
+
+.searchForm {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.searchFormInput {
+    flex: 1;
+    padding: 0.85rem 1.25rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    font-size: 1rem;
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    transition: border-color var(--transition-fast);
+}
+
+.searchFormInput:focus {
+    outline: none;
+    border-color: var(--text-secondary);
+}
+
+.searchFormBtn {
+    padding: 0.85rem 2rem;
+    background: var(--accent-red);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+.searchFormBtn:hover {
+    background: var(--accent-red-hover);
+    transform: scale(1.02);
+}
+
+.searchResultsTitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.searchResultsTitle strong {
+    color: var(--text-primary);
+}
+
+.searchGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.searchEmpty {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text-muted);
+}
+
+.searchEmptyIcon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.searchEmptyText {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.searchEmptySub {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+    .searchGrid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+
+    .searchForm {
+        flex-direction: column;
+    }
+}

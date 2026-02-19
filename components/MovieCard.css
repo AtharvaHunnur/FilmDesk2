@@ -1,0 +1,131 @@
+.movieCard {
+    position: relative;
+    flex-shrink: 0;
+    width: 200px;
+    aspect-ratio: 2/3;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all var(--transition-slow);
+    background: var(--bg-card);
+}
+
+.movieCard:hover {
+    transform: scale(1.08);
+    z-index: 10;
+    box-shadow: var(--shadow-card);
+}
+
+.movieCard img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity var(--transition-normal);
+}
+
+.movieCardPlaceholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--bg-card), var(--bg-hover));
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+.movieCardOverlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem 0.75rem 0.75rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 60%, transparent 100%);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.movieCard:hover .movieCardOverlay {
+    opacity: 1;
+}
+
+.movieCardTitle {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.movieCardYear {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+}
+
+.movieCardRating {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.7rem;
+    color: var(--accent-gold);
+    font-weight: 600;
+}
+
+.movieCardRating svg {
+    width: 10px;
+    height: 10px;
+}
+
+.movieCardActions {
+    display: flex;
+    gap: 0.4rem;
+    margin-top: 0.35rem;
+}
+
+.movieCardAction {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    transition: all var(--transition-fast);
+}
+
+.movieCardAction:hover {
+    border-color: white;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.movieCardAction.playBtn {
+    background: white;
+    border-color: white;
+    color: #141414;
+}
+
+.movieCardAction.playBtn:hover {
+    background: rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 768px) {
+    .movieCard {
+        width: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    .movieCard {
+        width: 120px;
+    }
+}
